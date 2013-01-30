@@ -24,7 +24,7 @@
 
   4. 利用 Apple 的 Dictionary Development Kit 將原始的 moedict_template 的資料轉換成我們要的資料
 
-        cd moedict_template
+        cd moedict_templates
         make # 等一陣子，在我的機器上要花 12mins
         make install 
 
