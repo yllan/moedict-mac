@@ -49,7 +49,7 @@ object Moedictionary extends App {
 
       <d:entry id={entry.id.toString} d:title={entry.title}>
       <d:index d:value={entry.title} />{
-        heteronyms.map(h => {
+        heteronyms.sortWith(_.bopomofo.get < _.bopomofo.get).map(h => {
           val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
           <h1 class="title">{entry.title}</h1>
