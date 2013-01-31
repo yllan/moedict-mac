@@ -2,6 +2,8 @@
 教育部國語辭典轉換為 Mac 原生辭典計劃。
 
 ## Prerequisite
+
+有裝 `brew` 的話 scala / sbt 直接 `brew install scala sbt` 就好了。否則手動安裝：
   * ☕ jdk ≥ 1.6
   * [scala 2.10.0+](http://www.scala-lang.org/downloads)
   * [sbt 0.12.2+](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)
