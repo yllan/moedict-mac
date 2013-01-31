@@ -5,19 +5,34 @@ d|entry {
 }
 
 h1	{
-	font-size: 150%;
+	font-size: 200%;
 }
 
 h3	{
 	font-size: 100%;
 }
 
-span.column {
-	display: block;
-	border: solid 2px #c0c0c0;
-	margin-left: 2em;
-	margin-right: 2em;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	padding: 0.5em;
+span .rt {
+  display: inline-block;
+  margin-right: 6px;
+  -webkit-writing-mode: vertical-rl;
+  font-size: 35%;
+  color: gray;
+}
+
+span .tone {
+  position: relative;
+  float: right;
+  left: 10px;
+  top: -6px;
+  font-size: 120%;
+}
+
+.part-of-speech {
+  color: white;
+  background-color: #555;
+  border-radius: 3px;
+  padding: 1px 2px 1px 2px;
+  /*border: 1px solid black;*/
+  font-size: 100%;
 }
