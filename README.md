@@ -3,7 +3,8 @@
 
 ## Prerequisite
 
-有裝 `brew` 的話 scala / sbt 直接 `brew install scala sbt` 就好了。否則手動安裝：
+有裝 `brew` 的話直接 `brew install scala sbt` 就好了。否則手動安裝：
+
   * ☕ jdk ≥ 1.6
   * [scala 2.10.0+](http://www.scala-lang.org/downloads)
   * [sbt 0.12.2+](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)
