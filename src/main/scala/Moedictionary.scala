@@ -18,7 +18,7 @@ object Moedictionary extends App {
   val db = Database.forURL(url = "jdbc:sqlite:development.unicode.sqlite3", driver = "org.sqlite.JDBC")
 
   import java.io._
-  val out = new PrintWriter("moedict_templates/MoeDictionary.xml")
+  val out = new PrintWriter("moedict_templates/MoeDictionary.xml", "UTF-8")
 
   db withSession {
     
