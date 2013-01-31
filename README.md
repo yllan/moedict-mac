@@ -9,10 +9,16 @@
   * [Dictionary Development Kit](https://developer.apple.com/downloads/index.action) 登入後抓 Auxiliary Tools for Xcode。為了方便，我把 build 要用到的工具 copy 到 ./bin 裡面了，只是要 build 的話可以不用抓。
 
 ## How to Build
-  
+  用 sbt 一口氣執行到底：
+
+        sbt get-db patch-db run build-dict
+
+  或者是一步一步來：
+
+
   1. 先抓 kcwu 的資料庫
 
-    `curl http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2 | bzcat > development.sqlite3`
+        curl http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2 | bzcat > development.sqlite3
 
   2. 使用 g0v 的 db2unicode.pl 將資料庫中以圖代字的 `<img src="xxxx">` 的轉換成 unicode
 
