@@ -5,27 +5,20 @@ d|entry {
 }
 
 h1	{
-	font-size: 200%;
+	font-size: 140%;
 }
 
 h3	{
 	font-size: 100%;
 }
 
-span .rt {
-  display: inline-block;
-  margin-right: 6px;
-  -webkit-writing-mode: vertical-rl;
-  font-size: 35%;
+.bopomofo {
+  display: block;
+  margin-top: -14px;
+  margin-bottom: 16px;
   color: gray;
-}
-
-span .tone {
-  position: relative;
-  float: right;
-  left: 10px;
-  top: -6px;
-  font-size: 120%;
+  font-size: 80%;
+  font-family: BiauKai, serif;
 }
 
 .part-of-speech {
@@ -33,6 +26,5 @@ span .tone {
   background-color: #555;
   border-radius: 3px;
   padding: 1px 2px 1px 2px;
-  /*border: 1px solid black;*/
   font-size: 100%;
 }

@@ -52,7 +52,8 @@ object Moedictionary extends App {
         heteronyms.map(h => {
           val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
-          <h1 class="title">{entry.title}<span class="bopomofo">{h.bopomofo.get}</span></h1>
+          <h1 class="title">{entry.title}</h1>
+          <span class="bopomofo">{h.bopomofo.get.replaceAll("　", " ").trim}</span>
           <div>
           {
             definitionsOf(h).groupBy(_.partOfSpeech).map({ case (pos, ds)=> 
