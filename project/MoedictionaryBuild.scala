@@ -87,7 +87,7 @@ object MoedictionaryBuild extends Build {
 
   val archiveTask = archive <<= streams map { (s: TaskStreams) ⇒
     okay("Archive dictionary",
-         "echo tar jcf moedict_templates/objects/moe.dictionary.tbz moedict_templates/objects/*.dictionary" #| "sh",
+         "echo cd moedict_templates/objects; tar jcf moe.dictionary.tbz *.dictionary" #| "sh",
          s)
   }
 
