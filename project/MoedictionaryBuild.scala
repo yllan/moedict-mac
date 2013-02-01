@@ -13,6 +13,7 @@ object MoedictionaryBuild extends Build {
       patchDBTask,
       buildDictTask,
       archiveTask,
+      uploadTask,
 
       name := "MoeDictionary",
       organization := "tw.3du",
@@ -87,6 +88,15 @@ object MoedictionaryBuild extends Build {
   val archiveTask = archive <<= streams map { (s: TaskStreams) ⇒
     okay("Archive dictionary",
          "echo tar jcf moedict_templates/objects/moe.dictionary.tbz moedict_templates/objects/*.dictionary" #| "sh",
+         s)
+  }
+
+  val upload = TaskKey[Unit]("upload", "Upload to moe.hypo.cc")
+
+  val uploadTask = upload <<= streams map { (s: TaskStreams) ⇒
+    val ts = new java.text.SimpleDateFormat("yyyyMMdd-HHmmss").format(new java.util.Date())
+    okay("Upload archive to moe.hypo.cc",
+         "scp moedict_templates/objects/moe.dictionary.tbz yllan@moe.hypo.cc:moe-www/moe-" + ts + ".dictionary.tbz",
          s)
   }
 }
