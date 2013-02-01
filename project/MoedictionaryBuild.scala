@@ -12,6 +12,7 @@ object MoedictionaryBuild extends Build {
       getDBTask,
       patchDBTask,
       buildDictTask,
+      archiveTask,
 
       name := "MoeDictionary",
       organization := "tw.3du",
@@ -78,6 +79,14 @@ object MoedictionaryBuild extends Build {
   val buildDictTask = buildDict <<= streams map { (s: TaskStreams) ⇒
     okay("Build Dictionary",
          "echo cd moedict_templates; make; make install" #| "sh",
+         s)
+  }
+
+  val archive = TaskKey[Unit]("archive", "Archive the dictionary")
+
+  val archiveTask = archive <<= streams map { (s: TaskStreams) ⇒
+    okay("Archive dictionary",
+         "echo tar jcf moedict_templates/objects/moe.dictionary.tbz moedict_templates/objects/*.dictionary" #| "sh",
          s)
   }
 }
