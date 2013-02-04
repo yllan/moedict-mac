@@ -21,6 +21,7 @@ object Entries extends Table[Entry]("entries") {
 
 case class Heteronym( id: Int, 
                       entryID: Int,
+                      idx: Int,
                       bopomofo: Option[String],
                       bopomofo2: Option[String],
                       pinyin: Option[String])
@@ -28,25 +29,36 @@ case class Heteronym( id: Int,
 object Heteronyms extends Table[Heteronym]("heteronyms") {
   def id = column[Int]("id", O.PrimaryKey)
   def entryID = column[Int]("entry_id")
+  def idx = column[Int]("idx")
   def bopomofo = column[Option[String]]("bopomofo")
   def bopomofo2 = column[Option[String]]("bopomofo2")
   def pinyin = column[Option[String]]("pinyin")
 
-  def * = id ~ entryID ~ bopomofo ~ bopomofo2 ~ pinyin <> (Heteronym, Heteronym.unapply _)
+  def * = id ~ entryID ~ idx ~ bopomofo ~ bopomofo2 ~ pinyin <> (Heteronym, Heteronym.unapply _)
 }
 
 case class Definition(id: Int,
                       heteronymID: Int,
+                      idx: Int,
                       partOfSpeech: String,
                       definition: String,
-                      example: String)
+                      example: String,
+                      quote: String,
+                      synonyms: String,
+                      antonyms: String,
+                      link: String)
 
 object Definitions extends Table[Definition]("definitions") {
   def id = column[Int]("id", O.PrimaryKey)
   def heteronymID = column[Int]("heteronym_id")
+  def idx = column[Int]("idx")
   def partOfSpeech = column[String]("type")
   def definition = column[String]("def")
   def example = column[String]("example")
+  def quote = column[String]("quote")
+  def synonyms = column[String]("synonyms")
+  def antonyms = column[String]("antonyms")
+  def link = column[String]("link")
   
-  def * = id ~ heteronymID ~ partOfSpeech ~ definition ~ example <> (Definition, Definition.unapply _)
+  def * = id ~ heteronymID ~ idx ~ partOfSpeech ~ definition ~ example ~ quote ~ synonyms ~ antonyms ~ link <> (Definition, Definition.unapply _)
 }

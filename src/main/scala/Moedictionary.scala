@@ -49,7 +49,7 @@ object Moedictionary extends App {
 
       <d:entry id={entry.id.toString} d:title={entry.title}>
       <d:index d:value={entry.title} />{
-        heteronyms.sortWith(_.bopomofo.get < _.bopomofo.get).map(h => {
+        heteronyms.sortWith(_.idx < _.idx).map(h => {
           val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
           <h1 class="title">{entry.title}</h1>
@@ -59,7 +59,7 @@ object Moedictionary extends App {
             definitionsOf(h).groupBy(_.partOfSpeech).map({ case (pos, ds)=> 
               <div>{if (pos != "") <span class="part-of-speech">{pos}</span>}
               <ol>{
-                ds.map(d =>
+                ds.sortWith(_.idx < _.idx).map(d =>
                   <li>
                     <p class="definition">{d.definition}</p>
                     { if (d.example != "") <p class="example">{d.example}</p> } 

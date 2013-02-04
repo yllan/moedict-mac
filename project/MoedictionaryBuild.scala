@@ -45,7 +45,7 @@ object MoedictionaryBuild extends Build {
 
   def fetchSourceDatabase(s: TaskStreams) = {
     okay("Fetching sqlite databse", 
-         "curl http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2" #| "bzcat" #> new File("development.sqlite3.downloading"), 
+         "curl http://kcwu.csie.org/~kcwu/moedict/dict-revised.sqlite3.bz2" #| "bzcat" #> new File("development.sqlite3.downloading"), 
          s)
 
     okay("Move downloaded database to correct path", 
