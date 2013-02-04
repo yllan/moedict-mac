@@ -50,19 +50,19 @@ object Moedictionary extends App {
       <d:entry id={entry.id.toString} d:title={entry.title}>
       <d:index d:value={entry.title} />{
         heteronyms.sortWith(_.idx < _.idx).map(h => {
-          val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
+          // val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
           <h1 class="title">{entry.title}</h1>
-          <span class="bopomofo">{h.bopomofo.get.replaceAll("　", " ").trim}</span>
+          <span class="bopomofo">{h.bopomofo.getOrElse("").replaceAll("　", " ").trim}</span>
           <div>
           {
             definitionsOf(h).groupBy(_.partOfSpeech).map({ case (pos, ds)=> 
-              <div>{if (pos != "") <span class="part-of-speech">{pos}</span>}
+              <div>{if (pos.isDefined) <span class="part-of-speech">{pos.getOrElse("")}</span>}
               <ol>{
                 ds.sortWith(_.idx < _.idx).map(d =>
                   <li>
                     <p class="definition">{d.definition}</p>
-                    { if (d.example != "") <p class="example">{d.example}</p> } 
+                    { if (d.example.isDefined) <p class="example">{d.example.get}</p> } 
                   </li>
                 )
               }</ol>
