@@ -15,7 +15,7 @@ object Moedictionary extends App {
     }</span>
   }
 
-  val db = Database.forURL(url = "jdbc:sqlite:development.unicode.sqlite3", driver = "org.sqlite.JDBC")
+  val db = Database.forURL(url = "jdbc:sqlite:dict-revised.unicode.sqlite3", driver = "org.sqlite.JDBC")
 
   import java.io._
   val out = new PrintWriter("moedict_templates/MoeDictionary.xml", "UTF-8")
@@ -62,7 +62,10 @@ object Moedictionary extends App {
                 ds.sortWith(_.idx < _.idx).map(d =>
                   <li>
                     <p class="definition">{d.definition}</p>
-                    { if (d.example.isDefined) <p class="example">{d.example.get}</p> } 
+                    { if (d.example.isDefined) <p class="example">{d.example.get}</p> }
+                    { if (d.quote.isDefined) <p class="quote">{d.quote.get}</p> }
+                    { if (d.synonyms.isDefined) <p class="synonyms">{d.synonyms.get}</p> }
+                    { if (d.antonyms.isDefined) <p class="antonyms">{d.antonyms.get}</p> }
                   </li>
                 )
               }</ol>

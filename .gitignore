@@ -1,9 +1,7 @@
 target
 project/target
-development.sqlite3
-development.pua.sqlite3
-development.unicode.sqlite3
-development.sqlite3.dump
+*.sqlite3
+*.dump
 #*#
 *~
 .DS_Store

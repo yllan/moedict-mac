@@ -45,11 +45,11 @@ object MoedictionaryBuild extends Build {
 
   def fetchSourceDatabase(s: TaskStreams) = {
     okay("Fetching sqlite databse", 
-         "curl http://kcwu.csie.org/~kcwu/moedict/dict-revised.sqlite3.bz2" #| "bzcat" #> new File("development.sqlite3.downloading"), 
+         "curl http://kcwu.csie.org/~kcwu/moedict/dict-revised.sqlite3.bz2" #| "bzcat" #> new File("dict-revised.sqlite3.downloading"), 
          s)
 
     okay("Move downloaded database to correct path", 
-         "mv -f development.sqlite3.downloading development.sqlite3", 
+         "mv -f dict-revised.sqlite3.downloading dict-revised.sqlite3", 
          s)
   }
 
@@ -63,15 +63,15 @@ object MoedictionaryBuild extends Build {
          s)
     
     okay("Clean old unicode database", 
-         "rm -f development.unicode.sqlite3", 
+         "rm -f dict-revised.unicode.sqlite3", 
          s)
 
     okay("Apply the patch", 
-         "curl https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl" #| "perl" #| "sqlite3 development.unicode.sqlite3", 
+         "curl https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl" #| "perl" #| "sqlite3 dict-revised.unicode.sqlite3", 
          s)
     
     okay("Clean up",
-         "rm -f sym.txt development.sqlite3.dump",
+         "rm -f sym.txt dict-revised.sqlite3.dump",
          s)
   }
 
