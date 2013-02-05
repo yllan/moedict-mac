@@ -28,3 +28,36 @@ h3	{
   padding: 1px 2px 1px 2px;
   font-size: 100%;
 }
+
+.example {
+  font-style: italic;
+}
+
+.quote {
+
+}
+
+.synonyms:before {
+  content: "同義";
+  border: 1px solid gray;
+  color: gray;
+  padding: 1px 1px 1px 1px;
+  margin-right: 8px;
+}
+
+
+.synonyms {
+
+}
+
+.antonyms:before {
+  content: "反義";
+  border: 1px solid gray;
+  color: gray;
+  padding: 1px 1px 1px 1px;
+  margin-right: 8px;
+}
+
+.antonyms {
+
+}
