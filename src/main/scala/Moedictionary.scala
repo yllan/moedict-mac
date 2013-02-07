@@ -62,8 +62,8 @@ object Moedictionary extends App {
                 ds.sortWith(_.idx < _.idx).map(d =>
                   <li>
                     <p class="definition">{d.definition}</p>
-                    { if (d.example.isDefined) <p class="example">{d.example.get}</p> }
-                    { if (d.quote.isDefined) <p class="quote">{d.quote.get}</p> }
+                    { if (d.example.isDefined) d.example.get.split(",").map(e => <p class="example">{e}</p>) }
+                    { if (d.quote.isDefined) d.quote.get.split(",").map(q => <p class="quote">{q}</p>) }
                     { if (d.synonyms.isDefined) <p class="synonyms">{d.synonyms.get}</p> }
                     { if (d.antonyms.isDefined) <p class="antonyms">{d.antonyms.get}</p> }
                   </li>
