@@ -15,7 +15,7 @@
 	- $pronunciation is externally provided.
 -->
 
-<xsl:template match="*[@d:pr='US']">
+<xsl:template match="span[@d:pr='bpmf']">
 	<xsl:if test="$pronunciation = '0'">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
@@ -23,20 +23,7 @@
 	</xsl:if>
 </xsl:template>
 
-<xsl:template match="*[@d:pr='IPA']">
-	<xsl:if test="$pronunciation = '1'">
-		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" />
-		</xsl:copy>
-	</xsl:if>
-	<xsl:if test="$pronunciation = '2'">
-		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" />
-		</xsl:copy>
-	</xsl:if>
-</xsl:template>
-
-<xsl:template match="*[@d:pr='US_IPA']">
+<xsl:template match="span[@d:pr='bpmf2']">
 	<xsl:if test="$pronunciation = '1'">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
@@ -44,31 +31,13 @@
 	</xsl:if>
 </xsl:template>
 
-<xsl:template match="*[@d:pr='UK_IPA']">
+<xsl:template match="span[@d:pr='pinyin']">
 	<xsl:if test="$pronunciation = '2'">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()" />
 		</xsl:copy>
 	</xsl:if>
 </xsl:template>
-
-
-<xsl:template match="span[@class='column']">
-	<xsl:if test="$display-column = '1'">
-		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" />
-		</xsl:copy>
-	</xsl:if>
-</xsl:template>
-
-<xsl:template match="span[@class='picture']">
-	<xsl:if test="$display-picture = '1'">
-		<xsl:copy>
-			<xsl:apply-templates select="@*|node()" />
-		</xsl:copy>
-	</xsl:if>
-</xsl:template>
-
 
 <!--
 	Default rule for all other tags

@@ -12,13 +12,13 @@ h3	{
 	font-size: 100%;
 }
 
-.bopomofo {
+.bopomofo, .bopomofo2, .pinyin {
   display: block;
   margin-top: -14px;
   margin-bottom: 16px;
-  color: gray;
   font-size: 80%;
   font-family: BiauKai, serif;
+  color: gray;
 }
 
 .part-of-speech {

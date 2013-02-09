@@ -53,7 +53,9 @@ object Moedictionary extends App {
           // val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
           <h1 class="title">{entry.title}</h1>
-          <span class="bopomofo">{h.bopomofo.getOrElse("").replaceAll("　", " ").trim}</span>
+          <span d:pr="bpmf" class="bopomofo">{h.bopomofo.getOrElse("").replaceAll("　", " ").trim}</span>
+          <span d:pr="bpmf2" class="bopomofo2">{h.bopomofo2.getOrElse("")}</span>
+          <span d:pr="pinyin" class="pinyin">{h.pinyin.getOrElse("")}</span>
           <div>
           {
             definitionsOf(h).groupBy(_.partOfSpeech).map({ case (pos, ds)=> 
