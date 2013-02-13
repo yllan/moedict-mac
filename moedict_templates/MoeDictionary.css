@@ -61,3 +61,15 @@ h3	{
 .antonyms {
 
 }
+
+.link:before {
+  content: "參考";
+  border: 1px solid gray;
+  color: gray;
+  padding: 1px 1px 1px 1px;
+  margin-right: 8px;
+}
+
+.link {
+
+}

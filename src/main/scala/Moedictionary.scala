@@ -68,6 +68,7 @@ object Moedictionary extends App {
                     { if (d.quote.isDefined) d.quote.get.split(",").map(q => <p class="quote">{q}</p>) }
                     { if (d.synonyms.isDefined) <p class="synonyms">{d.synonyms.get}</p> }
                     { if (d.antonyms.isDefined) <p class="antonyms">{d.antonyms.get}</p> }
+                    { if (d.link.isDefined) <p class="link">{d.link.get}</p> }
                   </li>
                 )
               }</ol>

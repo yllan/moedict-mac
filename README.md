@@ -40,5 +40,6 @@
 
 ## Reference
 
-[Apple Dictionary Services Programming Guide](https://developer.apple.com/library/mac/#documentation/UserExperience/Conceptual/DictionaryServicesProgGuide/Introduction/Introduction.html)
+1. [Apple Dictionary Services Programming Guide](https://developer.apple.com/library/mac/#documentation/UserExperience/Conceptual/DictionaryServicesProgGuide/Introduction/Introduction.html)
 
+2. [原始資料資料處理流程](https://github.com/g0v/moedict-process/wiki)
