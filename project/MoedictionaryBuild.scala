@@ -18,7 +18,7 @@ object MoedictionaryBuild extends Build {
       name := "MoeDictionary",
       organization := "tw.3du",
       version := "1.0",
-      scalaVersion := "2.10.0",
+      scalaVersion := "2.10.1",
       // add other settings here
       libraryDependencies ++= Seq(
         "com.typesafe.slick" %% "slick" % "1.0.0-RC2",

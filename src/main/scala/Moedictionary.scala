@@ -2,6 +2,7 @@ package tw.`3du`
 
 import scala.slick.driver.SQLiteDriver.simple._
 import Database.threadLocalSession
+import taobe.tec.jcc.JChineseConvertor
 
 object Moedictionary extends App {
 
@@ -14,6 +15,9 @@ object Moedictionary extends App {
       if (isTone(bpmf.last)) <span class="tone">{bpmf.last.toString}</span>
     }</span>
   }
+
+  val chineseConverter = JChineseConvertor.getInstance
+  def indexSetForTitle(title: String) = Set(title, chineseConverter.t2s(title))
 
   val db = Database.forURL(url = "jdbc:sqlite:dict-revised.unicode.sqlite3", driver = "org.sqlite.JDBC")
 
@@ -48,7 +52,8 @@ object Moedictionary extends App {
       val xml = 
 
       <d:entry id={entry.id.toString} d:title={entry.title}>
-      <d:index d:value={entry.title} />{
+      {indexSetForTitle(entry.title).map(t => <d:index d:value={t} />)}
+      {
         heteronyms.sortWith(_.idx < _.idx).map(h => {
           // val titleWithBopomofo = entry.title zip h.bopomofo.get.split("　").drop(1)
 
