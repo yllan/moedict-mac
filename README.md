@@ -21,7 +21,7 @@
 
   1. 先抓 kcwu 的資料庫
 
-        curl http://kcwu.csie.org/~kcwu/moedict/dict-revised.sqlite3.bz2 | bzcat > development.sqlite3
+        curl http://kcwu.csie.org/~kcwu/moedict/dict-revised.sqlite3.bz2 | bzcat > dict-revised.sqlite3
 
   2. 使用 g0v 的 db2unicode.pl 將資料庫中以圖代字的 `<img src="xxxx">` 的轉換成 unicode
 
