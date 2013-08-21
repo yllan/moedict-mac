@@ -1,0 +1,34 @@
+{
+  "author": "yllan",
+  "status": "production",
+  "name": "moedict-mac",
+  "name_zh": "萌典 Mac 版",
+  "description": "Convert MOE dict to Mac dictionary format.",
+  "description_zh": "將教育部國語字典轉為 Mac 內建字典檔",
+  "homepage": "https://github.com/yllan/moedict-mac",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yllan/moedict-mac"
+  },
+  "keywords": [
+    "mac",
+    "dictioanary",
+    "scala",
+    "xml"
+  ],
+  "audience": [
+    "public"
+  ],
+  "products": [
+    "dictionary"
+  ],
+  "projects": [
+    "3du"
+  ],
+  "contributors": [
+    "yllan",
+    "jamessa"
+  ],
+  "needs": [
+  ]
+}
