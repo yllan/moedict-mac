@@ -59,7 +59,7 @@ object MoedictionaryBuild extends Build {
     if (! new File("development.sqlite3").exists) fetchSourceDatabase(s)
 
     okay("Fetching the latest sym.txt", 
-         "curl -O https://raw.github.com/g0v/moedict-epub/master/sym.txt", 
+         "curl -O https://raw.githubusercontent.com/g0v/moedict-epub/master/sym.txt", 
          s)
     
     okay("Clean old unicode database", 
@@ -67,7 +67,7 @@ object MoedictionaryBuild extends Build {
          s)
 
     okay("Apply the patch", 
-         "curl https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl" #| "perl" #| "sqlite3 dict-revised.unicode.sqlite3", 
+         "curl https://raw.githubusercontent.com/g0v/moedict-epub/master/db2unicode.pl" #| "perl" #| "sqlite3 dict-revised.unicode.sqlite3", 
          s)
     
     okay("Clean up",
