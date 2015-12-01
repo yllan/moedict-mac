@@ -1,8 +1,6 @@
 import sbt._
 import sbt.Keys._
 
-import scala.sys.process._
-
 object MoedictionaryBuild extends Build {
 
   lazy val moedictionary = Project(
@@ -18,7 +16,7 @@ object MoedictionaryBuild extends Build {
       name := "MoeDictionary",
       organization := "tw.3du",
       version := "1.0",
-      scalaVersion := "2.10.2",
+      scalaVersion := "2.10.6",
       // add other settings here
       libraryDependencies ++= Seq(
         "com.typesafe.slick" %% "slick" % "1.0.1",
@@ -32,7 +30,7 @@ object MoedictionaryBuild extends Build {
 
   val getDB = TaskKey[Unit]("get-db", "Get sqlite db from kcwu")
 
-  def okay(jobDescription: String, job: scala.sys.process.ProcessBuilder, stream: TaskStreams) = {
+  def okay(jobDescription: String, job: sbt.ProcessBuilder, stream: TaskStreams) = {
     stream.log.info(jobDescription + " ...")
     if (job.! != 0) {
       sys.error(jobDescription + " failed.")

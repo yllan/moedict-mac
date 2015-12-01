@@ -5,9 +5,9 @@
 
 有裝 `brew` 的話直接 `brew install scala sbt` 就好了。否則手動安裝：
 
-  * ☕ jdk ≥ 1.6
+  * ☕ jdk ≥ 1.8
   * [scala 2.10.0+](http://www.scala-lang.org/downloads)
-  * [sbt 0.12.2+](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)
+  * [sbt 0.13.0+](http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html)
     第一次的話最好設定 `echo 'SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Xmx2g -Dfile.encoding=UTF8"' > ~/.sbtconfig` 以免發生 java.lang.OutOfMemoryError: PermGen space  
   * [Dictionary Development Kit](https://developer.apple.com/downloads/index.action) 登入後抓 Auxiliary Tools for Xcode。為了方便，我把 build 要用到的工具 copy 到 ./bin 裡面了，只是要 build 的話可以不用抓。
 
