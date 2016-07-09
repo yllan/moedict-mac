@@ -25,8 +25,8 @@
 
   2. 使用 g0v 的 db2unicode.pl 將資料庫中以圖代字的 `<img src="xxxx">` 的轉換成 unicode
 
-        curl -O https://raw.github.com/g0v/moedict-epub/master/sym.txt
-        curl https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl | perl | sqlite3 development.unicode.sqlite3
+        curl -LO https://raw.github.com/g0v/moedict-epub/master/sym.txt
+        curl -L https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl | perl | sqlite3 development.unicode.sqlite3
 
   3. 將 development.unicode.sqlite3 轉換成 moedict_template/MoeDictionary.xml
 
